@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+@import "../blog-homepage/footer.css";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #ecf9ff;
+    height: 100%;
+}
+
+body{
+    font-family: 'Quicksand', serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas:
+    "nav nav nav nav"
+    "main main main main"
+    "about about about sidebar"
+    "related-articles related-articles related-articles sidebar"
+    "footer footer footer footer";
+    gap: 0.5rem;
+    font-weight: 800;
+    font-size: 12px;
+    text-align: center;
+}
+
+.blog-title {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    grid-area: nav;
+}
+
+.main {
+    grid-area: main;
+}
+
+.main h2 {
+    font-weight: bolder;
+}
+
+.sidebar {
+    background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+    grid-area: sidebar;
+    color: white;
+}
+
+.about {
+    background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+    grid-area: about;
+    color: white;
+}
+
+.related-articles {
+    grid-area: related-articles;
+}
+
+.page-footer {
+    grid-area: footer;
+}
+
+/*media queries*/
+
+@media only screen and (max-width: 550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas:
+      "nav"
+      "main"
+      "about"
+      "related-articles"
+      "sidebar"
+      "footer";
+    }
+}
